@@ -1,13 +1,99 @@
-body {
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@700&family=Playfair:ital,opsz,wght@300;400&display=swap');
+*{
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  box-sizing: border-box;
+}
+/* font-family: "Poppins", sans-serif; */
+/* font-family: "Playfair Display", serif; */
+
+/* Navbar CSS */
+.navbar{
+  font-family: "Playfair Display", serif;
+  font-size: 17px;
+  line-height: 26px;
+  text-transform: uppercase;
+  box-shadow: 0px 8px 6px -6px;
+  border-bottom: 0.5px solid;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+/* Targeting link */
+
+.nav-link{
+  font-weight: 300 !important;
+}
+
+/* Targeting active class */
+
+.active{
+  border-bottom: 2px solid;
+}
+
+.active:hover{
+  color: black;
+}
+
+/* Targeting app Logo */
+.navbar-brand{
+  font-weight: 700;
+  font-family: 'robto','sans-serif';
+  letter-spacing: 1px;
+}
+
+/* Designing Footer */
+.footer{
+  color: white;
+  padding: 25px;
+  background: rgb(14, 204, 230);
+  background: linear-gradient(
+    to right,
+    #434343,
+    #000000
+  );
+}
+
+/* Targetting anker tag under footer */
+.footer a{
+  text-decoration: none;
+  color: white;
+  padding: 10px;
+}
+
+/* Applying hower on footer links */
+.footer a:hover{
+  color:rgb(50, 247, 247);
+  border-bottom: 1px solid rgb(50, 247, 247)
+}
+
+/* Applying Page Not Found CSS */
+
+.pnf{
+  display: flex;
+  min-height: 64vh;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.pnf-title{
+    font-size: 100px;
+    font-weight: 700;
+}
+
+.pnf-heading{
+  font-weight: normal;
+}
+
+.pnf-btn{
+  color: black;
+  border: 1px solid black;
+  text-decoration: none;
+  padding: 10px;
+  margin-top: 10px;
+}
+
+.pnf-btn:hover{
+  color: white;
+  background-color: black;
 }
