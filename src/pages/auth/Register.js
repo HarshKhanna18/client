@@ -19,7 +19,7 @@ const Register = () => {
     try {
       //Creating post request that can be handeled by RegisterController
       const res = await axios.post(
-        `${process.env.client.REACT_APP_API}/api/v1/auth/register`,
+        `${process.env.REACT_APP_API}/api/v1/auth/register`,
         { name, email, password, phone, address }
       );
       //IF our request handle success
