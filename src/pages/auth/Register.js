@@ -23,8 +23,8 @@ const Register = () => {
         { name, email, password, phone, address }
       );
       //IF our request handle success
-      if (res.data.success) {
-        toast.success(res.data.message);
+      if (res && res.data.success) {
+        toast.success(res.data && res.data.message);
         navigate("/login");
       } else {
         toast.error(res.data.message);
