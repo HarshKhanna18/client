@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Layout from "../../components/Layout/Layout";
 import "../css/register.css";
-import { toast } from "react-toastify";
+import toast from "react-hot-toast";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
@@ -36,6 +36,13 @@ const Register = () => {
   };
   return (
     <Layout title="Registeration">
+      <body>
+        <div>
+          <div className="wave"></div>
+          <div className="wave"></div>
+          <div className="wave"></div>
+        </div>
+      </body>
       <div className="register">
         <h1>Register Page</h1>
         <form onSubmit={handleSubmit}>
