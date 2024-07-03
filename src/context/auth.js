@@ -4,7 +4,7 @@ import { useState, useContext, createContext } from "react";
 const AuthContext = createContext();
 
 //creating Auth Provider
-const AuthProvider = ({ childern }) => {
+const AuthProvider = ({ children }) => {
   //creating state
   const [auth, setAuth] = useState({
     user: null,
@@ -12,7 +12,7 @@ const AuthProvider = ({ childern }) => {
   });
   return (
     <AuthContext.Provider value={[auth, setAuth]}>
-      {childern}
+      {children}
     </AuthContext.Provider>
   );
 };
