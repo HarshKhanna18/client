@@ -22,7 +22,8 @@ const AuthProvider = ({ children }) => {
         token: parseData.token,
       });
     }
-  }, [auth]); //setting the dependency
+    //eslint-disable-next-line
+  }, []); //Removing auth dependency because we dont require in continous
 
   return (
     <AuthContext.Provider value={[auth, setAuth]}>
