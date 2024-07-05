@@ -9,13 +9,16 @@ import Register from "./pages/auth/Register";
 import Login from "./pages/auth/Login";
 import "react-toastify/dist/ReactToastify.css";
 import DashBoard from "./pages/user/DashBoard";
+import PrivateRoute from "./components/Routes/privateRoutes";
 
 function App() {
   return (
     <>
       <Routes>
         <Route path="/" element={<HomePage />} />
-        <Route path="/dashboard" element={<DashBoard />} />
+        <Route path="/dashboard" element={<PrivateRoute />}>
+          <Route path="" element={<DashBoard />} />
+        </Route>
         <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Login />} />
         <Route path="/about" element={<About />} />

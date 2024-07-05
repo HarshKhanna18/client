@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { useAuth } from "../../context/auth";
 import { Outlet } from "react-router-dom";
 import axios from "axios";
+import Spinner from "./../Spinner";
 
 export default function PrivateRoute() {
   const [ok, setOk] = useState(false);
@@ -10,11 +11,7 @@ export default function PrivateRoute() {
   useEffect(() => {
     const authCheck = async () => {
       //defining prefix of our private URL
-      const res = await axios.get("/api/v1/auth/user-auth", {
-        headers: {
-          Authorization: auth?.token, //defining header with key<token>
-        },
-      });
+      const res = await axios.get("/api/v1/auth/user-auth");
       if (res.data.ok) {
         setOk(true);
       } else {
@@ -22,6 +19,6 @@ export default function PrivateRoute() {
       }
     };
     if (auth.token) authCheck(); //caling hook function
-  }, [auth?.token]); //defining depemndency
-  return ok ? <Outlet /> : "spinner";
+  }, [auth?.token]); //defining dependency
+  return ok ? <Outlet /> : <Spinner />;
 }
