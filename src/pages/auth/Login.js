@@ -42,8 +42,15 @@ const Login = () => {
   };
   return (
     <Layout title="Sign in">
+      <body>
+        <div>
+          <div className="wave"></div>
+          <div className="wave"></div>
+          <div className="wave"></div>
+        </div>
+      </body>
       <div className="login">
-        <h1>Login Page</h1>
+        <h1>LOGIN Here </h1>
         <form onSubmit={handleSubmit}>
           <div className="mb-3">
             <input
