@@ -50,7 +50,7 @@ const Login = () => {
         </div>
       </body>
       <div className="login">
-        <h1>LOGIN Here </h1>
+        <h1 className="logoin">LOGIN Here</h1>
         <form onSubmit={handleSubmit}>
           <div className="mb-3">
             <input

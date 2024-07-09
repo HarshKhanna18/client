@@ -44,7 +44,7 @@ const Register = () => {
         </div>
       </body>
       <div className="register">
-        <h1>Register Page</h1>
+        <h1 className="register-label">Register Page</h1>
         <form onSubmit={handleSubmit}>
           <div className="mb-3">
             <input

@@ -6,4 +6,18 @@
     justify-content: center;
     height: 70vh;
     flex-direction: column;
+    color: aliceblue    ;
+}
+/* Applying animation on text  */
+@keyframes text-animation {
+    0% { transform: translateY(-50px); opacity: 0; }
+    100% { transform: translateY(0); opacity: 1; }
+  }
+
+  .logoin {
+    animation: text-animation 1s ease-out;
+  }
+  
+.btn{
+    animation: text-animation 1s ease-in
 }

@@ -36,7 +36,7 @@ body {
         background-position: 0% 0%;
     }
 }
-
+/*Applying wave animation*/
 .wave {
     background: rgb(255 255 255 / 25%);
     border-radius: 1000% 1000% 0 0;
@@ -83,4 +83,8 @@ body {
     100% {
         transform: translateX(1);
     }
+}
+/* applying transition on regoster label */
+.register-label{
+    animation: text-animation 1s ease-out;
 }
