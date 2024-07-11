@@ -11,6 +11,7 @@ const Register = () => {
   const [password, setPassword] = useState("");
   const [phone, setPhone] = useState("");
   const [address, setAddress] = useState("");
+  const [answer, setAnswer] = useState("");
   const navigate = useNavigate();
 
   //form Submit function
@@ -20,7 +21,7 @@ const Register = () => {
       //Creating post request that can be handeled by RegisterController
       const res = await axios.post(
         `${process.env.REACT_APP_API}/api/v1/auth/register`,
-        { name, email, password, phone, address }
+        { name, email, password, phone, address, answer }
       );
       //IF our request handle success
       if (res && res.data.success) {
@@ -98,6 +99,17 @@ const Register = () => {
               className="form-control"
               id="registerAddress"
               placeholder="Enter your address"
+              required
+            />
+          </div>
+          <div className="mb-3">
+            <input
+              type="text"
+              value={answer}
+              onChange={(event) => setAnswer(event.target.value)}
+              className="form-control"
+              id="registerAnswer"
+              placeholder="Favorite Language"
               required
             />
           </div>
