@@ -10,6 +10,7 @@ import Login from "./pages/auth/Login";
 import "react-toastify/dist/ReactToastify.css";
 import DashBoard from "./pages/user/DashBoard";
 import PrivateRoute from "./components/Routes/privateRoutes";
+import Forgot from "./pages/auth/Forgot";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
           <Route path="" element={<DashBoard />} />
         </Route>
         <Route path="/register" element={<Register />} />
+        <Route path="/forgot-password" element={<Forgot />} />
         <Route path="/login" element={<Login />} />
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />

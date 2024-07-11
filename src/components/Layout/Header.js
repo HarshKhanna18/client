@@ -3,6 +3,7 @@ import { NavLink, Link } from "react-router-dom";
 import { SiShopify } from "react-icons/si";
 import { useAuth } from "../../context/auth";
 import toast from "react-hot-toast";
+import DashBoard from "./../../pages/user/DashBoard";
 
 export const Header = () => {
   const [auth, setAuth] = useAuth();
@@ -59,14 +60,32 @@ export const Header = () => {
               </>
             ) : (
               <>
-                <li className="nav-item">
+                <li className="nav-item dropdown">
                   <NavLink
-                    onClick={handleLogout}
-                    to="/login"
-                    className="nav-link"
+                    className="nav-link dropdown-toggle"
+                    href="#"
+                    role="button"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
                   >
-                    Logout
+                    {auth?.user?.name}
                   </NavLink>
+                  <ul className="dropdown-menu">
+                    <li>
+                      <NavLink to="/dashboard" className="dropdown-item">
+                        DashBoard
+                      </NavLink>
+                    </li>
+                    <li>
+                      <NavLink
+                        onClick={handleLogout}
+                        to="/login"
+                        className="dropdown-item"
+                      >
+                        Logout
+                      </NavLink>
+                    </li>
+                  </ul>
                 </li>
               </>
             )}
