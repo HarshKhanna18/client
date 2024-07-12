@@ -3,7 +3,6 @@ import { NavLink, Link } from "react-router-dom";
 import { SiShopify } from "react-icons/si";
 import { useAuth } from "../../context/auth";
 import toast from "react-hot-toast";
-import DashBoard from "./../../pages/user/DashBoard";
 
 export const Header = () => {
   const [auth, setAuth] = useAuth();
@@ -72,7 +71,12 @@ export const Header = () => {
                   </NavLink>
                   <ul className="dropdown-menu">
                     <li>
-                      <NavLink to="/dashboard" className="dropdown-item">
+                      <NavLink
+                        to={`/dashboard/${
+                          auth?.user?.role === 1 ? "admin" : "user"
+                        }`}
+                        className="dropdown-item"
+                      >
                         DashBoard
                       </NavLink>
                     </li>
