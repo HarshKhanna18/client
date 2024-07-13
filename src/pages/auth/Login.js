@@ -24,7 +24,7 @@ const Login = () => {
       );
       //IF our request handle success
       if (res.data.success) {
-        toast.success(res.data.message);
+        toast.success(res.data.message, { duration: 3000 });
         setAuth({
           ...auth,
           user: res.data.user,
