@@ -11,11 +11,18 @@ export default function AdminRoute() {
   useEffect(() => {
     const authCheck = async () => {
       //defining prefix of our private URL
-      const res = await axios.get(
-        `${process.env.REACT_APP_API}/api/v1/auth/admin-auth`
-      );
+      let resAdmin, resUser;
       debugger;
-      if (res.data.ok) {
+      if (auth.user.role !== 0) {
+        resAdmin = await axios.get(
+          `${process.env.REACT_APP_API}/api/v1/auth/admin-auth`
+        );
+      } else {
+        resUser = await axios.get(
+          `${process.env.REACT_APP_API}/api/v1/auth/user-auth`
+        );
+      }
+      if (resAdmin !== undefined && resAdmin.data.ok) {
         setOk(true);
       } else {
         setOk(false);
@@ -23,5 +30,5 @@ export default function AdminRoute() {
     };
     if (auth?.token) authCheck(); //caling hook function
   }, [auth?.token]); //defining dependency
-  return ok ? <Outlet /> : <Spinner path="" />;
+  return ok ? <Outlet /> : <Spinner path="user" />;
 }

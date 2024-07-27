@@ -8,6 +8,7 @@ const Spinner = ({ path = "login" }) => {
     const interval = setInterval(() => {
       setCount((previousValue) => --previousValue); //decresing the count of time
     }, 1000);
+    debugger;
     count === 0 &&
       navigate(`${path}`, {
         state: location.pathname, //fetching current path
